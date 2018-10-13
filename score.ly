@@ -51,75 +51,316 @@ rhMark = \markup {
 }
 
 violin-a = \relative c'' {
+  R1.*16
 }
 
-upper-a = \relative c'''' {
+
+
+upper-a = \relative c''' {
+  \mark \default
+  \ottava #1
+  \repeat unfold 2 {
+    e8 d e a e d e d e a e d
+    e d e g e d e d e g e d
+    d c d g d c d c d g d c
+    d c d g d c b a b e b a
+
+    e'8 d e a e d e d e a e d
+    e d e g e d e d e g e d
+    d c d b' d, c g' d c b' d, c
+    d c d b' d, c g' d c b' d, c
+  }
+  \ottava #0
 }
 
 lower-a = \relative c'' {
+  \clef treble
+  <f a c>1.
+  <f g b>
+  <e g b>
+  <a, c e>2. <g a c>
+
+  <f' a c>1.
+  <f g b>
+  <e g b>
+  <a, c e>
+
+  <f a c>1.
+  <f g b>
+  <e g b>
+  <a c e>2. <g a c>
+
+  <f a c>1.
+  <f g b>
+  <e g b>
+  <a c e>2. \clef bass b,8 a g e d c
 }
 
 violin-b = \relative c'' {
 }
 
-upper-b = \relative c'' {
+upper-theme = \relative c' {
+  d8 e d a d2
+  r4 d8 e d e g e
+  d8 e d a c2
+  r4 <e c'> <e b'>8 g e4
+  d8 e d a d2
+  r4 d8 e d e g e
+  d8 e d c a2~
+  a2
+}
+upper-theme-no-end-tie = \relative c' {
+  d8 e d a d2
+  r4 d8 e d e g e
+  d8 e d a c2
+  r4 <e c'> <e b'>8 g e4
+  d8 e d a d2
+  r4 d8 e d e g e
+  d8 e d c a2
 }
 
-lower-b = \relative c'' {
+upper-theme-to-development = \relative c' {
+  d8 e d a d2
+  r4 d8 e d e g e
+  d8 e d a c2
+  r4 <e c'> <e b'>8 g e4
+  d8 e d a d2
+  r4 d8 e d e g e
+  d8 e d c <a fis>4. c8
+  <a f>4. g8 <g b,>4 <e b>8 d
+}
+
+upper-theme-add-harmony = \relative c' {
+  <d a>8 e d a <d a>2~
+  q4 <d b>8 e <d b> e g e
+  d8 e d a <c g>2~
+  q4 <e c'> <e b'>8 g e4
+  <d a>8 e d a <d a>2~
+  q4 <d b>8 e <d b> e g e
+  d8 e d c <a c,>2~
+  q2
+}
+
+upper-theme-add-harmony-no-end-tie = \relative c' {
+  <d a>8 e d a <d a>2~
+  q4 <d b>8 e <d b> e g e
+  d8 e d a <c g>2~
+  q4 <e c'> <e b'>8 g e4
+  <d a>8 e d a <d a>2~
+  q4 <d b>8 e <d b> e g e
+  d8 e d c <a c,>2
+}
+
+upper-theme-add-harmony-to-development = \relative c' {
+  <d a>8 e d a <d a>2~
+  q4 <d b>8 e <d b> e g e
+  d8 e d a <c g>2~
+  q4 <e c'> <e b'>8 g e4
+  <d a>8 e d a <d a>2~
+  q4 <d b>8 e <d b> e g e
+  <d g,>8 e d c <a fis>4. c8
+  <a f>4. g8 <g b,>4 <e b>8 d
+}
+
+upper-b = \relative c' {
+  \tempo 4 = 102
+  \time 4/4
+  \mark \default
+  \upper-theme
+  r2
+  \transpose c c' { \upper-theme }
+  << { e2 } \\ { b4 c } >>
+  \transpose c c' { \upper-theme }
+}
+
+lower-b = \relative c, {
+  \time 4/4
+  <f c'>1
+  <g f'>
+  a4 e' g2
+  a,4 a' g <g, d'>
+  <f c'>1
+  <g f'>
+  a4 e' g2~
+  g2 <g, b d e>
+
+  f4 c' e2
+  g,4 d' f2
+  a,4 e' g2
+  a,4 a' g <g, d'>4
+  f4 c' e2
+  g,4 d' f2
+  a,4 e' g2~
+  g2 <g, d'>2
+
+  f4 c' e2
+  g,4 d' f2
+  a,4 e' g2
+  a,4 a' g <g, d'>4
+  f4 c' e2
+  g,4 d' f2
+  a,4 e' g2~
+  g1
 }
 
 violin-c = \relative c'' {
 }
 
-upper-c = \relative c'' {
+upper-c = \relative c' {
+  b4 c
+  \mark \default
+  <d a'>8 g a g~ g a4 <a d,>8~
+  q8 g a g~ g a g f
+  <e a,>8 d e d~ d e4 <e a,>8~
+  q8 d e d~ d4 e8 f
+  <a d,>8 g a g~ g a4 <a d,>8~
+  q8 g a g~ g a g f
+  <e a,>8 d e a~ a e4 <e b>8~
+  q8 d e gis~ gis2
 }
 
-lower-c = \relative c'' {
+lower-c = \relative c' {
+  <g bes>2~ q8 d4 q8~
+  q2~ q8 a' g f
+  <d f>2~ q8 a4 q8~
+  q4. q8~ q4 e'8 f
+  <g bes>2~ q8 d4 q8~
+  q2~ q8 a' g f
+  <fis b,>2.~ q8 <e gis>8~
+  q1
 }
 
 violin-d = \relative c'' {
 }
 
-upper-d = \relative c'' {
+upper-d = \relative c''' {
+  \mark \default
+  \ottava #1
+  \transpose c c'' { \upper-theme-no-end-tie }
+  \ottava #0
+  d8 b c e, d b c g'
+  \transpose c c' { \upper-theme-to-development }
 }
 
-lower-d = \relative c'' {
+lower-d = \relative c, {
+  f4 c' e2
+  g,4 d' f2
+  a,4 e' g2
+  a,4 a' g <g, d'>4
+  f4 c' e2
+  g,4 d' f2
+  a,4 e' g2~
+  g2 <g, b d e>2\arpeggio
+
+  f4 c' e2
+  g,4 d' f2
+  a,4 e' g2
+  a,4 a' <g d'>2
+  <fis a d>4 q q q
+  <f g b>4 q q q
+  <e g c>4 q <d a'> q
+  <g b>4 q <g, d'> q
 }
 
 violin-e = \relative c'' {
 }
 
-upper-e = \relative c'' {
+upper-e = \relative c' {
+  \mark \default
+  <e a,>8 q q q q q q q
+  <e b g>8 q q q <d b g> q q q
+  q8 q q q q q q q
+  q8 q q q <c a g> q <d b g> q
+  <e a,>8 q q q q q q q
+  <e b g>8 q q q <d b g>4-- <a e b>--
+  <g e b>8 q q q q q <b g d>4--
+  q8 q q q <c g e>4-- <d b e,>4--
 }
 
-lower-e = \relative c'' {
+lower-e = \relative c, {
+  <f c'>8 q q q q q q q
+  <f d'>8 q q q q q q q
+  <e b'>8 q q q q q q q
+  <a e'>8 q q q q q <g e'> q
+  <f c'>8 q q q q q q q
+  <f d'>8 q q q q q q q
+  <e d'>8 q q q q q q q
+  <a e'>8 q q q q q <g e'> q
 }
 
 violin-f = \relative c'' {
 }
 
-upper-f = \relative c'' {
+upper-f = \relative c' {
+  \mark \default
+  \transpose c c' { \upper-theme-add-harmony }
+  <b d e>4 q
 }
 
-lower-f = \relative c'' {
+lower-f = \relative c, {
+  <f c'>8 q q q q q q q
+  <g d'>8 q q q q q q q
+  <a e'>8 q q q q q q q
+  q8 q q q <g d'> q q q
+  <f c'>8 q q q q q q q
+  <g d'>8 q q q q q q q
+  <a e'>8 q q q q q q q
+  q8 q q q <g d'> q q q
 }
 
 violin-g = \relative c'' {
 }
 
-upper-g = \relative c'' {
+upper-g = \relative c''' {
+  \ottava #1
+  \transpose c c'' { \upper-theme-add-harmony-no-end-tie }
+  \ottava #0
+  d8 b c e, d b c g'
+  \transpose c c' { \upper-theme-add-harmony-to-development }
 }
 
-lower-g = \relative c'' {
+lower-g = \relative c, {
+  <f c'>8 q q q q q q q
+  <g d'>8 q q q q q q q
+  <a e'>8 q q q q q q q
+  q8 q q q <g d'> q q q
+  <f c'>8 q q q q q q q
+  <g d'>8 q q q q q q q
+  <a e'>8 q q q q q q q
+  q8 q q q <g d'> q q q
+
+  <f c'>8 q q q q q q q
+  <g d'>8 q q q q q q q
+  <a e'>8 q q q q q q q
+  q8 q q q <g d'> q q q
+  fis8 d' fis d fis d fis, d'
+  f,8 d' f d f d f, d'
+  e,8 c' e c d, a' d a
+  g8 d' f d g, d' f d
 }
 
 violin-h = \relative c'' {
 }
 
-upper-h = \relative c'' {
+outro-theme = \relative c' {
+  <a e'>2 a
+  b4. d16 c b4 e,
+}
+upper-h = \relative c'''' {
+  \outro-theme
+  \transpose c c' { \outro-theme }
+  \transpose c c'' { \outro-theme }
+  \ottava #1
+  <a c e>1\fermata
+  <a c e>1\fermata
 }
 
-lower-h = \relative c'' {
+lower-h = \relative c, {
+  \repeat unfold 6 {
+    \repeat tremolo 8 { f16 c' }
+  }
+  \repeat tremolo 8 { f,16 c' }
+  <f, c'>1\fermata
 }
 
 upper = \relative c' {
@@ -132,7 +373,9 @@ upper = \relative c' {
   \upper-c
   \upper-d
   \upper-e
-  \upper-f
+  \repeat volta 2 {
+    \upper-f
+  }
   \upper-g
   \upper-h
   \bar "|."
@@ -147,7 +390,9 @@ lower = \relative c {
   \lower-c
   \lower-d
   \lower-e
-  \lower-f
+  \repeat volta 2 {
+    \lower-f
+  }
   \lower-g
   \lower-h
   \bar "|."
@@ -165,7 +410,9 @@ violin = \relative c'' {
   \violin-c
   \violin-d
   \violin-e
-  \violin-f
+  \repeat volta 2 {
+    \violin-f
+  }
   \violin-g
   \violin-h
   \bar "|."
