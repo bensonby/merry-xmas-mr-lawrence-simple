@@ -44,13 +44,14 @@ rhMark = \markup {
 }
 
 \header {
-  title = "Merry Christmas My Lawrence"
+  title = "Merry Christmas Mr. Lawrence"
   subtitle = "For Violin and Piano"
   composer = "Composed by Ryuichi Sakamoto"
   arranger = "Arranged by Benson"
 }
 
 violin-a = \relative c'' {
+  \mark \default
   R1.*8
   e4.~\< e8\!-> r r r4. r
   e4.~\< e8\!-> r r r4. r
@@ -178,6 +179,7 @@ upper-theme-add-harmony-to-development = \relative c' {
 violin-b = \relative c'' {
   \tempo 4 = 102
   \time 4/4
+  \mark \default
   \violin-theme
   r2
   a1 b c r4 e d b
@@ -221,6 +223,7 @@ lower-b = \relative c, {
 }
 
 violin-c = \relative c'' {
+  \mark \default
   a8\( g a g~ g a4 a8~
   a8 g a g~ g a g f
   e8 d e d~ d e4 e8~
@@ -258,7 +261,10 @@ lower-c = \relative c' {
 }
 
 violin-d = \relative c'' {
-  R1*12
+  \mark \default
+  a1 b c r4 e d b
+  a1 b c R1
+  R1*4
   fis1 f?1
   e2 d g g,
 }
@@ -293,6 +299,7 @@ lower-d = \relative c, {
 }
 
 violin-e = \relative c'' {
+  \mark \default
 }
 
 upper-e = \relative c' {
@@ -432,6 +439,7 @@ dynamics = {
 }
 
 violin = \relative c'' {
+  \tempo 4. = 70
   \clef treble
   \time 12/8
   \key a \minor
@@ -455,7 +463,7 @@ violin = \relative c'' {
   <<
     \new Staff = "violinstaff" <<
       \set Staff.midiInstrument = #"violin"
-      \set Staff.instrumentName = #"Vocal"
+      \set Staff.instrumentName = #"Violin"
       \set Staff.midiMinimumVolume = #0.7
       \set Staff.midiMaximumVolume = #0.8
       \new Voice = "violin" {
@@ -542,7 +550,7 @@ violin = \relative c'' {
   <<
     \new Staff = "violinstaff" <<
       \set Staff.midiInstrument = #"violin"
-      \set Staff.instrumentName = #"Vocal"
+      \set Staff.instrumentName = #"Violin"
       \set Staff.midiMinimumVolume = #0.7
       \set Staff.midiMaximumVolume = #0.8
       \new Voice = "violin" {
