@@ -51,10 +51,16 @@ rhMark = \markup {
 }
 
 violin-a = \relative c'' {
-  R1.*16
+  R1.*8
+  e4.~\< e8\!-> r r r4. r
+  e4.~\< e8\!-> r r r4. r
+  d4.~\< d8\!-> r r r4. r
+  d4.~\< d8\!-> r r r4. r
+  e4.~\< e8\!-> r r r4. r
+  e4.~\< e8\!-> r r r4. r
+  d4.~\< d8\!-> r r r4. r
+  b'4.~\< b8\!-> r r r4. r
 }
-
-
 
 upper-a = \relative c''' {
   \mark \default
@@ -96,9 +102,16 @@ lower-a = \relative c'' {
   <a c e>2. \clef bass b,8 a g e d c
 }
 
-violin-b = \relative c'' {
+violin-theme = \relative c' {
+  d8 e d a d2
+  r4 d8 e d e g e
+  d8 e d a c2
+  r4 c' b8 g e4
+  d8 e d a d2
+  r4 d8 e d e g e
+  d8 e d c a2~
+  a2
 }
-
 upper-theme = \relative c' {
   d8 e d a d2
   r4 d8 e d e g e
@@ -162,14 +175,27 @@ upper-theme-add-harmony-to-development = \relative c' {
   <a f>4. g8 <g b,>4 <e b>8 d
 }
 
+violin-b = \relative c'' {
+  \tempo 4 = 102
+  \time 4/4
+  \violin-theme
+  r2
+  a1 b c r4 e d b
+  a1 b c R1
+}
+
 upper-b = \relative c' {
   \tempo 4 = 102
   \time 4/4
   \mark \default
-  \upper-theme
-  r2
-  \transpose c c' { \upper-theme }
-  << { e2 } \\ { b4 c } >>
+  <a e'>1
+  <a e'>1
+  <a e'>1
+  r4 <e' c'> <e b'>8 g e4
+  <a, e'>1
+  <a e'>1
+  <a e'>1~ q2
+  << { e'2 } \\ { b4 c } >>
   \transpose c c' { \upper-theme }
 }
 
@@ -184,53 +210,57 @@ lower-b = \relative c, {
   a4 e' g2~
   g2 <g, b d e>
 
-  f4 c' e2
-  g,4 d' f2
-  a,4 e' g2
+  f4 c' a'2
+  g,4 d' b'2
+  a,4 e' c'2
   a,4 a' g <g, d'>4
-  f4 c' e2
-  g,4 d' f2
-  a,4 e' g2~
-  g2 <g, d'>2
-
-  f4 c' e2
-  g,4 d' f2
-  a,4 e' g2
-  a,4 a' g <g, d'>4
-  f4 c' e2
-  g,4 d' f2
-  a,4 e' g2~
-  g1
+  f4 c' a'2
+  g,4 d' b'2
+  a,4 e' c'2~
+  c1
 }
 
 violin-c = \relative c'' {
+  a8\( g a g~ g a4 a8~
+  a8 g a g~ g a g f
+  e8 d e d~ d e4 e8~
+  e8 d e d~ d4\) e8\( f
+  a8 g a g~ g a4 a8~
+  a8 g a g~ g a g f
+  e8 d e a~ a e4 e8~
+  e8 d e gis~ gis2\)
 }
 
 upper-c = \relative c' {
   b4 c
   \mark \default
-  <d a'>8 g a g~ g a4 <a d,>8~
-  q8 g a g~ g a g f
-  <e a,>8 d e d~ d e4 <e a,>8~
-  q8 d e d~ d4 e8 f
-  <a d,>8 g a g~ g a4 <a d,>8~
-  q8 g a g~ g a g f
-  <e a,>8 d e a~ a e4 <e b>8~
-  q8 d e gis~ gis2
+  <d f>2~ q8 d'4 <d a'>8~
+  q1
+  <a, e'>2~ q8 a'4 <a e'>8~
+  q2. e8 f
+  <d f>2~ q8 d'4 <d a'>8~
+  q1
+  \arpeggioArrowDown
+  <a e d a>1\arpeggio
+  <gis e d cis>\arpeggio
+  \arpeggioNormal
 }
 
 lower-c = \relative c' {
-  <g bes>2~ q8 d4 q8~
-  q2~ q8 a' g f
-  <d f>2~ q8 a4 q8~
-  q4. q8~ q4 e'8 f
-  <g bes>2~ q8 d4 q8~
-  q2~ q8 a' g f
-  <fis b,>2.~ q8 <e gis>8~
-  q1
+  <g bes>1~
+  q2~ q8 a g f
+  <d f>1~
+  q2. e8 f
+  <g bes>1~
+  q2~ q8 a g f
+  <fis b,>1
+  <e e,>1
 }
 
 violin-d = \relative c'' {
+  R1*12
+  fis1 f?1
+  e2 d g g,
 }
 
 upper-d = \relative c''' {
@@ -243,19 +273,19 @@ upper-d = \relative c''' {
 }
 
 lower-d = \relative c, {
-  f4 c' e2
-  g,4 d' f2
-  a,4 e' g2
+  f4 c' a'2
+  g,4 d' b'2
+  a,4 e' c'2
   a,4 a' g <g, d'>4
-  f4 c' e2
-  g,4 d' f2
-  a,4 e' g2~
+  f4 c' a'2
+  g,4 d' b'2
+  a,4 e' c'2
   g2 <g, b d e>2\arpeggio
 
-  f4 c' e2
-  g,4 d' f2
-  a,4 e' g2
-  a,4 a' <g d'>2
+  <f' g a c>4 q q q
+  <f g b d>4 q q q
+  <e g a c>4 q q q
+  <a b c e>4 q <g b c e>4 q
   <fis a d>4 q q q
   <f g b>4 q q q
   <e g c>4 q <d a'> q
@@ -502,6 +532,25 @@ violin = \relative c'' {
     \context {
       \ChordNameVoice \remove Note_performer
     }
+  }
+}
+}
+
+\book {
+\bookOutputSuffix "violin"
+\score {
+  <<
+    \new Staff = "violinstaff" <<
+      \set Staff.midiInstrument = #"violin"
+      \set Staff.instrumentName = #"Vocal"
+      \set Staff.midiMinimumVolume = #0.7
+      \set Staff.midiMaximumVolume = #0.8
+      \new Voice = "violin" {
+        \violin
+      }
+    >>
+  >>
+  \layout {
   }
 }
 }
