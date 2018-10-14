@@ -514,6 +514,7 @@ dynamics = {
 }
 
 violin = \relative c'' {
+  \compressFullBarRests
   \set Score.markFormatter = #format-mark-box-alphabet
   \tempo 4. = 70
   \clef treble
