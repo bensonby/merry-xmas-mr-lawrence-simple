@@ -1,6 +1,6 @@
 \version "2.18.2"
 \include "articulate.ly"
-#(set-global-staff-size 16)
+%#(set-global-staff-size 19)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  http://lsr.di.unimi.it/LSR/Item?id=445
@@ -42,6 +42,17 @@ cl = \change Staff = "left"
 rhMark = \markup { 
   \path #0.1 #'((moveto -1 0)(rlineto 0 -1.5)(rlineto 0.5 0))
 }
+
+compound-meter-to-simple-meter-mark = \markup {
+  \concat {
+    (
+    \smaller \general-align #Y #DOWN \note #"8" #1
+    "="
+    \smaller \general-align #Y #DOWN \note #"8" #1
+    )
+  }
+}
+
 
 \header {
   title = "Merry Christmas Mr. Lawrence"
@@ -177,7 +188,7 @@ upper-theme-add-harmony-to-development = \relative c' {
 }
 
 violin-b = \relative c'' {
-  \tempo 4 = 102
+  \tempo \compound-meter-to-simple-meter-mark 4 = 102
   \time 4/4
   \mark \default
   \violin-theme
@@ -187,7 +198,7 @@ violin-b = \relative c'' {
 }
 
 upper-b = \relative c' {
-  \tempo 4 = 102
+  \tempo \compound-meter-to-simple-meter-mark 4 = 102
   \time 4/4
   \mark \default
   <a e'>1
@@ -214,12 +225,12 @@ lower-b = \relative c, {
 
   f4 c' a'2
   g,4 d' b'2
-  a,4 e' c'2
+  a,4 e' g2
   a,4 a' g <g, d'>4
   f4 c' a'2
   g,4 d' b'2
-  a,4 e' c'2~
-  c1
+  a,4 e' g2~
+  g1
 }
 
 violin-c = \relative c'' {
@@ -281,11 +292,11 @@ upper-d = \relative c''' {
 lower-d = \relative c, {
   f4 c' a'2
   g,4 d' b'2
-  a,4 e' c'2
+  a,4 e' g2
   a,4 a' g <g, d'>4
   f4 c' a'2
   g,4 d' b'2
-  a,4 e' c'2
+  a,4 e' g2~
   g2 <g, b d e>2\arpeggio
 
   <f' g a c>4 q q q
@@ -411,7 +422,7 @@ lower-g = \relative c, {
 }
 
 violin-h = \relative c' {
-  \repeat tremolo 16 e16\p-\markup { \italic a tempo }-\markup {\italic cresc. }
+  \repeat tremolo 16 e16-\markup { \italic a tempo \dynamic p \italic cresc. }
   \repeat tremolo 16 e16
   \repeat tremolo 16 e16
   \repeat tremolo 16 e16
@@ -444,6 +455,7 @@ lower-h = \relative c, {
 }
 
 upper = \relative c' {
+  \set Score.markFormatter = #format-mark-box-alphabet
   \clef treble
   \tempo 4. = 70
   \time 12/8
@@ -490,18 +502,19 @@ dynamics = {
   % D
   s1*8 s1-\markup { \italic cresc. } s1*7
   % E
-  s1\mf-\markup { \italic con forza } s1*5 s1-\markup { \italic cresc. } s1
+  s1-\markup { \dynamic mf \italic con forza } s1*5 s1-\markup { \italic cresc. } s1
   % F
   s1\f s1*7
   % G
   s1*11 s1-\markup { \italic dim. } s1*3 s2. s4-\markup { \italic rit. }
   % H
-  s1\p-\markup { \italic a tempo } s1
+  s1-\markup { \dynamic p \italic a tempo } s1
   s1\mf s1
   s1\f s1*3
 }
 
 violin = \relative c'' {
+  \set Score.markFormatter = #format-mark-box-alphabet
   \tempo 4. = 70
   \clef treble
   \time 12/8
