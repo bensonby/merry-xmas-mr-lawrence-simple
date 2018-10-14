@@ -53,14 +53,14 @@ rhMark = \markup {
 violin-a = \relative c'' {
   \mark \default
   R1.*8
-  e4.~\< e8\!-> r r r4. r
-  e4.~\< e8\!-> r r r4. r
-  d4.~\< d8\!-> r r r4. r
-  d4.~\< d8\!-> r r r4. r
-  e4.~\< e8\!-> r r r4. r
-  e4.~\< e8\!-> r r r4. r
-  d4.~\< d8\!-> r r r4. r
-  b'4.~\< b8\!-> r r r4. r
+  e4.~\mp\< e8\!-> r r r4. r
+  e4.~\mp\< e8\!-> r r r4. r
+  d4.~\mp\< d8\!-> r r r4. r
+  d4.~\mp\< d8\!-> r r r4. r
+  e4.~\mp\< e8\!-> r r r4. r
+  e4.~\mp\< e8\!-> r r r4. r
+  d4.~\mp\< d8\!-> r r r4. r
+  b'4.~\mf\< b8\!-> r r r4. r
 }
 
 upper-a = \relative c''' {
@@ -104,7 +104,7 @@ lower-a = \relative c'' {
 }
 
 violin-theme = \relative c' {
-  d8\( e d a d2\)
+  d8\(\mf e d a d2\)
   r4 d8\( e d e g e
   d8 e d a c2\)
   r4 c'\( b8 g e4\)
@@ -182,7 +182,7 @@ violin-b = \relative c'' {
   \mark \default
   \violin-theme
   r2
-  a1\( b c\) r4 e\( d b\)
+  a1\(\p b c\) r4 e\( d b\)
   a1\( b c\) R1
 }
 
@@ -193,7 +193,7 @@ upper-b = \relative c' {
   <a e'>1
   <a e'>1
   <a e'>1
-  r4 <e' c'>\( <e b'>8 g e4\)
+  r4 <e' c'>\(^\mf <e b'>8 g e4\)
   <a, e'>1
   <a e'>1
   <a e'>1~ q2
@@ -224,7 +224,7 @@ lower-b = \relative c, {
 
 violin-c = \relative c'' {
   \mark \default
-  a8\( g a g~ g a4 a8~
+  a8\(\mf g a g~ g a4 a8~
   a8 g a g~ g a g f
   e8 d e d~ d e4 e8~
   e8 d e d~ d4\) e8\( f
@@ -262,10 +262,10 @@ lower-c = \relative c' {
 
 violin-d = \relative c'' {
   \mark \default
-  a1\( b c\) r4 e\( d b\)
+  a1\(\p b c\) r4 e\( d b\)
   a1\( b c\) R1
   R1*4
-  fis1\( f?1
+  fis1\(-\markup { \italic cresc. } f?1
   e2 d g g,\)
 }
 
@@ -300,13 +300,13 @@ lower-d = \relative c, {
 
 violin-e = \relative c' {
   \mark \default
-  \repeat unfold 12 { e8-.-> }
+  e8-.->\mf \repeat unfold 11 { e8-.-> }
   \repeat unfold 4 { d8-.-> }
   \repeat unfold 7 { d8-.-> } d16-.-> d16-.->
   \repeat unfold 4 { c8-.-> } c4-- d--
   \repeat unfold 8 { e8-.-> }
   \repeat unfold 4 { e8-.-> } d4-- a'4--
-  \repeat unfold 6 { g8-.-> } b4--
+  g8-.->-\markup { \italic cresc. } \repeat unfold 5 { g8-.-> } b4--
   \repeat unfold 4 { b8-.-> } c4-- d4--
 }
 
@@ -334,7 +334,7 @@ lower-e = \relative c, {
 }
 
 violin-f = \relative c' {
-  a8-.->^\markup { play at an octave higher on repeat (or from bar 69 if the high C on bar 68 is too hard) }
+  a8-.->\mf^\markup { play at an octave higher on repeat (or from bar 69 if the high C on bar 68 is too hard) }
   \repeat unfold 6 { a8-.-> } a16-.-> a16-.->
   \repeat unfold 8 { b8-.-> }
   \repeat unfold 7 { c8-.-> } c16-.-> c16-.->
@@ -363,7 +363,7 @@ lower-f = \relative c, {
 }
 
 violin-g = \relative c'' {
-  e1\(
+  e1\(\f
   a2.~ a8 b
   b1
   e,1\)
@@ -374,8 +374,8 @@ violin-g = \relative c'' {
   e1\(
   a2.~ a8 c8
   b1
-  e,1\)
-  e2~\( e8 d8 c b~
+  e,1\)\>
+  e2~\!\mf\( e8 d8 c b~
   b1\)
   c2\( d
   a2 g4 e8_\markup { \italic "rit." } d\)
@@ -411,7 +411,7 @@ lower-g = \relative c, {
 }
 
 violin-h = \relative c' {
-  \repeat tremolo 16 e16\p_\markup {\italic cresc. }
+  \repeat tremolo 16 e16\p-\markup { \italic a tempo }-\markup {\italic cresc. }
   \repeat tremolo 16 e16
   \repeat tremolo 16 e16
   \repeat tremolo 16 e16
@@ -479,6 +479,26 @@ lower = \relative c {
 }
 
 dynamics = {
+  % A
+  s1.\p s1.*7
+  s1.\mp s1.*3 s1.-\markup { \italic cresc. } s1.*2 s2. s2.-\markup { \italic dim. }
+  % B
+  s1\mp s1*3 s1\mp s1*3
+  s1\mf s1*7
+  % C
+  s1\mp s1*7
+  % D
+  s1*8 s1-\markup { \italic cresc. } s1*7
+  % E
+  s1\mf-\markup { \italic con forza } s1*5 s1-\markup { \italic cresc. } s1
+  % F
+  s1\f s1*7
+  % G
+  s1*11 s1-\markup { \italic dim. } s1*3 s2. s4-\markup { \italic rit. }
+  % H
+  s1\p-\markup { \italic a tempo } s1
+  s1\mf s1
+  s1\f s1*3
 }
 
 violin = \relative c'' {
