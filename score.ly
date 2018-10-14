@@ -104,76 +104,76 @@ lower-a = \relative c'' {
 }
 
 violin-theme = \relative c' {
-  d8 e d a d2
-  r4 d8 e d e g e
-  d8 e d a c2
-  r4 c' b8 g e4
-  d8 e d a d2
-  r4 d8 e d e g e
+  d8\( e d a d2\)
+  r4 d8\( e d e g e
+  d8 e d a c2\)
+  r4 c'\( b8 g e4\)
+  d8\( e d a d2\)
+  r4 d8\( e d e g e
   d8 e d c a2~
-  a2
+  a2\)
 }
 upper-theme = \relative c' {
-  d8 e d a d2
-  r4 d8 e d e g e
-  d8 e d a c2
-  r4 <e c'> <e b'>8 g e4
-  d8 e d a d2
-  r4 d8 e d e g e
-  d8 e d c a2~
+  d8\( e d a d2\)
+  r4 d8\( e d e g e
+  d8 e d a c2\)
+  r4 <e c'>\( <e b'>8 g e4\)
+  d8\( e d a d2\)
+  r4 d8\( e d e g e
+  d8 e d c a2~\)
   a2
 }
 upper-theme-no-end-tie = \relative c' {
-  d8 e d a d2
-  r4 d8 e d e g e
-  d8 e d a c2
-  r4 <e c'> <e b'>8 g e4
-  d8 e d a d2
-  r4 d8 e d e g e
-  d8 e d c a2
+  d8\( e d a d2\)
+  r4 d8\( e d e g e
+  d8 e d a c2\)
+  r4 <e c'>\( <e b'>8 g e4\)
+  d8\( e d a d2\)
+  r4 d8\( e d e g e
+  d8 e d c a2\)
 }
 
 upper-theme-to-development = \relative c' {
-  d8 e d a d2
-  r4 d8 e d e g e
-  d8 e d a c2
-  r4 <e c'> <e b'>8 g e4
-  d8 e d a d2
-  r4 d8 e d e g e
+  d8\( e d a d2\)
+  r4 d8\( e d e g e
+  d8 e d a c2\)
+  r4 <e c'>\( <e b'>8 g e4\)
+  d8\( e d a d2\)
+  r4 d8\( e d e g e
   d8 e d c <a fis>4. c8
-  <a f>4. g8 <g b,>4 <e b>8 d
+  <a f>4. g8 <g b,>4 <e b>8 d\)
 }
 
 upper-theme-add-harmony = \relative c' {
-  <d a>8 e d a <d a>2~
-  q4 <d b>8 e <d b> e g e
-  d8 e d a <c g>2~
-  q4 <e c'> <e b'>8 g e4
-  <d a>8 e d a <d a>2~
-  q4 <d b>8 e <d b> e g e
-  d8 e d c <a c,>2~
+  <d a>8\( e d a <d a>2~\)
+  q4 <d b>8\( e <d b> e g e
+  d8 e d a <c g>2~\)
+  q4 <e c'>\( <e b'>8 g e4\)
+  <d a>8\( e d a <d a>2~\)
+  q4 <d b>8\( e <d b> e g e
+  d8 e d c <a c,>2~\)
   q2
 }
 
 upper-theme-add-harmony-no-end-tie = \relative c' {
-  <d a>8 e d a <d a>2~
-  q4 <d b>8 e <d b> e g e
-  d8 e d a <c g>2~
-  q4 <e c'> <e b'>8 g e4
-  <d a>8 e d a <d a>2~
-  q4 <d b>8 e <d b> e g e
-  d8 e d c <a c,>2
+  <d a>8\( e d a <d a>2~\)
+  q4 <d b>8\( e <d b> e g e
+  d8 e d a <c g>2~\)
+  q4 <e c'>\( <e b'>8 g e4\)
+  <d a>8\( e d a <d a>2~\)
+  q4 <d b>8\( e <d b> e g e
+  d8 e d c <a c,>2\)
 }
 
 upper-theme-add-harmony-to-development = \relative c' {
-  <d a>8 e d a <d a>2~
-  q4 <d b>8 e <d b> e g e
-  d8 e d a <c g>2~
-  q4 <e c'> <e b'>8 g e4
-  <d a>8 e d a <d a>2~
-  q4 <d b>8 e <d b> e g e
+  <d a>8\( e d a <d a>2~\)
+  q4 <d b>8\( e <d b> e g e
+  d8 e d a <c g>2~\)
+  q4 <e c'>\( <e b'>8 g e4\)
+  <d a>8\( e d a <d a>2~\)
+  q4 <d b>8\( e <d b> e g e
   <d g,>8 e d c <a fis>4. c8
-  <a f>4. g8 <g b,>4 <e b>8 d
+  <a f>4. g8 <g b,>4 <e b>8 d\)
 }
 
 violin-b = \relative c'' {
@@ -182,8 +182,8 @@ violin-b = \relative c'' {
   \mark \default
   \violin-theme
   r2
-  a1 b c r4 e d b
-  a1 b c R1
+  a1\( b c\) r4 e\( d b\)
+  a1\( b c\) R1
 }
 
 upper-b = \relative c' {
@@ -193,11 +193,11 @@ upper-b = \relative c' {
   <a e'>1
   <a e'>1
   <a e'>1
-  r4 <e' c'> <e b'>8 g e4
+  r4 <e' c'>\( <e b'>8 g e4\)
   <a, e'>1
   <a e'>1
   <a e'>1~ q2
-  << { e'2 } \\ { b4 c } >>
+  << { e'2 } \\ { b4\( c\) } >>
   \transpose c c' { \upper-theme }
 }
 
@@ -235,13 +235,13 @@ violin-c = \relative c'' {
 }
 
 upper-c = \relative c' {
-  b4 c
+  b4\( c
   \mark \default
-  <d f>2~ q8 d'4 <d a'>8~
+  <d f>2~ q8 d'4 <d a'>8~\)
   q1
-  <a, e'>2~ q8 a'4 <a e'>8~
-  q2. e8 f
-  <d f>2~ q8 d'4 <d a'>8~
+  <a, e'>2~\( q8 a'4 <a e'>8~\)
+  q2. e8\( f
+  <d f>2~ q8 d'4 <d a'>8~\)
   q1
   \arpeggioArrowDown
   <a e d a>1\arpeggio
@@ -251,22 +251,22 @@ upper-c = \relative c' {
 
 lower-c = \relative c' {
   <g bes>1~
-  q2~ q8 a g f
+  q2~ q8 a\( g f\)
   <d f>1~
   q2. e8 f
   <g bes>1~
-  q2~ q8 a g f
+  q2~ q8 a\( g f\)
   <fis b,>1
   <e e,>1
 }
 
 violin-d = \relative c'' {
   \mark \default
-  a1 b c r4 e d b
-  a1 b c R1
+  a1\( b c\) r4 e\( d b\)
+  a1\( b c\) R1
   R1*4
-  fis1 f?1
-  e2 d g g,
+  fis1\( f?1
+  e2 d g g,\)
 }
 
 upper-d = \relative c''' {
@@ -274,7 +274,7 @@ upper-d = \relative c''' {
   \ottava #1
   \transpose c c'' { \upper-theme-no-end-tie }
   \ottava #0
-  d8 b c e, d b c g'
+  d8\( b c e, d b c g'\)
   \transpose c c' { \upper-theme-to-development }
 }
 
@@ -298,34 +298,51 @@ lower-d = \relative c, {
   <g b>4 q <g, d'> q
 }
 
-violin-e = \relative c'' {
+violin-e = \relative c' {
   \mark \default
+  \repeat unfold 12 { e8-.-> }
+  \repeat unfold 4 { d8-.-> }
+  \repeat unfold 7 { d8-.-> } d16-.-> d16-.->
+  \repeat unfold 4 { c8-.-> } c4-- d--
+  \repeat unfold 8 { e8-.-> }
+  \repeat unfold 4 { e8-.-> } d4-- a'4--
+  \repeat unfold 6 { g8-.-> } b4--
+  \repeat unfold 4 { b8-.-> } c4-- d4--
 }
 
 upper-e = \relative c' {
   \mark \default
-  <e a,>8 q q q q q q q
-  <e b g>8 q q q <d b g> q q q
-  q8 q q q q q q q
-  q8 q q q <c a g> q <d b g> q
-  <e a,>8 q q q q q q q
-  <e b g>8 q q q <d b g>4-- <a e b>--
-  <g e b>8 q q q q q <b g d>4--
-  q8 q q q <c g e>4-- <d b e,>4--
+  <e a,>8-> q q q q q q q
+  <e b g>8-> q q q <d b g> q q q
+  q8-> q q q q q q q->
+  q8-> q q q <c a g>-> q <d b g>4--
+  <e a,>8-> q q q q q q q
+  <e b g>8-> q q q <d b g>4-- <a' e b>--
+  <g e b>8-> q q q q q <b g d>4--
+  q8-> q q q <c g e>4-- <d b e,>4--
 }
 
 lower-e = \relative c, {
-  <f c'>8 q q q q q q q
-  <f d'>8 q q q q q q q
-  <e b'>8 q q q q q q q
-  <a e'>8 q q q q q <g e'> q
-  <f c'>8 q q q q q q q
-  <f d'>8 q q q q q q q
-  <e d'>8 q q q q q q q
-  <a e'>8 q q q q q <g e'> q
+  <f c'>8-> q q q q q q q
+  <f d'>8-> q q q q q q q
+  <e b'>8-> q q q q q q q
+  <a e'>8-> q q q q-> q <g e'>4--
+  <f c'>8-> q q q q q q q
+  <f d'>8-> q q q q q q q
+  <e d'>8-> q q q q q q q
+  <a e'>8-> q q q q-> q <g e'>-> q
 }
 
-violin-f = \relative c'' {
+violin-f = \relative c' {
+  a8-.->^\markup { play at an octave higher on repeat (or from bar 69 if the high C on bar 68 is too hard) }
+  \repeat unfold 6 { a8-.-> } a16-.-> a16-.->
+  \repeat unfold 8 { b8-.-> }
+  \repeat unfold 7 { c8-.-> } c16-.-> c16-.->
+  \repeat unfold 2 { c8-.-> } c'4\(\f b8 g e4\)
+  \repeat unfold 7 { e8-.-> } e16-.-> e16-.->
+  \repeat unfold 8 { d8-.-> }
+  \repeat unfold 7 { c8-.-> } c16-.-> c16-.->
+  \repeat unfold 4 { c8-.-> } c4-- d4--
 }
 
 upper-f = \relative c' {
@@ -335,20 +352,37 @@ upper-f = \relative c' {
 }
 
 lower-f = \relative c, {
-  <f c'>8 q q q q q q q
-  <g d'>8 q q q q q q q
-  <a e'>8 q q q q q q q
-  q8 q q q <g d'> q q q
-  <f c'>8 q q q q q q q
-  <g d'>8 q q q q q q q
-  <a e'>8 q q q q q q q
+  <f c'>8-> q q q q q q q
+  <g d'>8-> q q q q q q q
+  <a e'>8-> q q q q q q q
+  q8-> q q q <g d'>-> q q q
+  <f c'>8-> q q q q q q q
+  <g d'>8-> q q q q q q q
+  <a e'>8-> q q q q q q q
   q8 q q q <g d'> q q q
 }
 
 violin-g = \relative c'' {
+  e1\(
+  a2.~ a8 b
+  b1
+  e,1\)
+  e2.~\( e8 a8
+  g2. e4
+  d2~ d8 c d e~
+  e1\)
+  e1\(
+  a2.~ a8 c8
+  b1
+  e,1\)
+  e2~\( e8 d8 c b~
+  b1\)
+  c2\( d
+  a2 g4 e8_\markup { \italic "rit." } d\)
 }
 
 upper-g = \relative c''' {
+  \mark \default
   \ottava #1
   \transpose c c'' { \upper-theme-add-harmony-no-end-tie }
   \ottava #0
@@ -357,33 +391,42 @@ upper-g = \relative c''' {
 }
 
 lower-g = \relative c, {
-  <f c'>8 q q q q q q q
-  <g d'>8 q q q q q q q
-  <a e'>8 q q q q q q q
-  q8 q q q <g d'> q q q
-  <f c'>8 q q q q q q q
-  <g d'>8 q q q q q q q
-  <a e'>8 q q q q q q q
-  q8 q q q <g d'> q q q
+  <f c'>8-> q q q q q q q
+  <g d'>8-> q q q q q q q
+  <a e'>8-> q q q q q q q
+  q8-> q q q <g d'> q q q
+  <f c'>8-> q q q q q q q
+  <g d'>8-> q q q q q q q
+  <a e'>8-> q q q q q q q
+  q8-> q q q <g d'> q q q
 
-  <f c'>8 q q q q q q q
-  <g d'>8 q q q q q q q
-  <a e'>8 q q q q q q q
-  q8 q q q <g d'> q q q
-  fis8 d' fis d fis d fis, d'
-  f,8 d' f d f d f, d'
-  e,8 c' e c d, a' d a
-  g8 d' f d g, d' f d
+  <f c'>8-> q q q q q q q
+  <g d'>8-> q q q q q q q
+  <a e'>8-> q q q q q q q
+  q8-> q q q <g d'> q q q
+  fis8\( d' fis d fis d fis, d'\)
+  f,8\( d' f d f d f, d'\)
+  e,8\( c' e c d, a' d a\)
+  g8\( d' f d g, d' f d\)
 }
 
-violin-h = \relative c'' {
+violin-h = \relative c' {
+  \repeat tremolo 16 e16\p_\markup {\italic cresc. }
+  \repeat tremolo 16 e16
+  \repeat tremolo 16 e16
+  \repeat tremolo 16 e16
+  \repeat tremolo 16 <a e'>16\f
+  \repeat tremolo 16 <a e'>16
+  \repeat tremolo 16 <a e'>16\fermata
+  <a e'>1\fermata
 }
 
 outro-theme = \relative c' {
-  <a e'>2 a
-  b4. d16 c b4 e,
+  <a e'>2\( a
+  b4. d16 c b4 e,\)
 }
 upper-h = \relative c'''' {
+  \mark \default
   \outro-theme
   \transpose c c' { \outro-theme }
   \transpose c c'' { \outro-theme }
